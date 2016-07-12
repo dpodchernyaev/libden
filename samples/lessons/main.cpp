@@ -1,63 +1,44 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char *arg[])
+/* считает факториал числа введенного из командной строки 
+	argc - количество параметров
+	argv - набор параметров с количеством == argc
+	
+	Возвращает
+		0 в случае успеха или 
+		-1 в случае ошибки
+*/
+int main(int argc, char *argv[])
 {
-	/*
- 	for (int j = 0; j < 10; j++)
-	{
-		printf("\n счетчик номер = %d", j + 1);
-	}
+	/* значение по умолчанию. Ключевое слово const означает, что 
+		присвоение значения может быть только 1 раз. Если
+		дальше в коде написать: defaultN = 10;, то будет ошибка */
+	const int defaultN = 5; 
+	int n = defaultN;
+	
+	/* 
+		Посмотри код, мы много что не проходили, но попробуй разобраться
+		Вызывать программу (run.exe число)
+		argc == 2 - 2 т.к. первый параметр это название программы run.exe, 
+			второй параметр это сам аргумент 
+				argv[1] - взять 1-й аргумент командной строки, 
+					а argv[0] - название программы
+	sscanf - преобразует первый аргумент в целое число, если 
+	это возможно. Если преобразование успешно, то возврщает 1, если нет то 0
 	*/
+	if (argc == 2) 
+	{
+		printf("first arg: %s", argv[0]);
+		printf("\nsecond arg: %s", argv[1]);
+		if (sscanf(argv[1], "%d", &n) != 1)
+		{
+			printf("\nВведено не число");
+			return -1;
+		}
+	}
+
+	printf("\nn = %d\n", n);
 	
-	int j = 0;
-
-	printf("\n Введите число: ");
-	scanf("%d", &j);
-	printf("\n Число: %d \n", j);
-/*
-	do
-	{
-		printf("\n счетчик номер = %d", j + 1);
-		j++;
-	}
-	while (j < 10);
-*/
-/*
-	for (int i = 0; i < ...; i++)
-	{
-	}
-*/
-
-	const arrSize = 10;
-	int arr[arrSize];
-	for (int i = 0; i < arrSize; i++)
-	{
-		arr[i] = i + 1;
-	}
-	
-/*
-	int summ = 8;
-	int a = 0;	
-	while (summ < 10)
-	{
-		summ = summ + a;
-		a++;
-		printf("\n %d", summ);
-	}
-	if (summ == 10)
-	{
-		printf("\n summ=10");		
-	}
-	else
-	{
-		printf("\n Error summ= %d", summ);		
-	}
-*/
-
-	exit(0);
 	return 0;
 }
-
-// 5308292@gmail.com
-
