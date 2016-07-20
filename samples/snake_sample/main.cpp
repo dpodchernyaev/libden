@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <iostream>  //����������� ����������
-#include <time.h> //��������� �����
-#include <stdio.h> //��� printf
-#include <windows.h> // ��� HANDLE, �������, �����
-#include <conio.h>  //��� kbhit
+#include <iostream> 
+#include <time.h>
+#include <stdio.h>
+#include <windows.h>
+#include <conio.h>
 void clearScreen()
 {
 	HANDLE hOut;
